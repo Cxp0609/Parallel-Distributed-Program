@@ -6,8 +6,8 @@ def check_if_prime(number, server_address):
     response = requests.get(url)
     print(response.text)
 
-def find_nth_fibonacci(n, server_address):
-    url = f"http://{server_address}/fibonacci/{n}"
+def find_nth_fibonacci(number, server_address):
+    url = f"http://{server_address}/fibonacci/{number}"
     response = requests.get(url)
     print(response.text)
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
             check_if_prime(number, server_address)
         elif choice == '2':
             n = int(input("Enter the value of n to find nth Fibonacci number: "))
-            find_nth_fibonacci(n, server_address)
+            find_nth_fibonacci(number, server_address)
         elif choice == '3':
             number = int(input("Enter a number to find its factors: "))
             find_factors(number, server_address)
