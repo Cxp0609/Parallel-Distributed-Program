@@ -25,7 +25,7 @@ class PrimeThread(threading.Thread):
                 return False
             i += 6
         return True
-
+    #this is the fibonacci class
 class FibonacciThread(threading.Thread):
     def __init__(self, n):
         threading.Thread.__init__(self)
@@ -68,7 +68,7 @@ def find_factors(n):
     factors.sort()
     return factors
 
-async def http_server(host,port):
+async def http_server(host, port):
     app = web.Application()
     app.router.add_route('GET', '/prime/{number}', handle_prime_request)
     app.router.add_route('GET', '/fibonacci/{n}', handle_fibonacci_request)
@@ -79,7 +79,7 @@ async def http_server(host,port):
 
     site = web.TCPSite(runner, host, port)
     await site.start()
-
+    # pritning host and port
     print(f"Server running at http://{host}:{port}")
     print("Example usage: http://192.168.12.114:443/prime/17 will check if 17 is prime.\nhttp://192.168.12.114:443/fibonacci/10 will find the 10th Fibonacci number.\nhttp://192.168.12.114:443/factors/30 will find the factors of 30.")
 
@@ -99,7 +99,7 @@ async def handle_factors_request(request):
     return web.Response(text=f"The factors of {number} are: {factors}")
 
 if __name__ == '__main__':
-    host, port = '172.20.212.108', 443 # Change to current IP Address
+    host, port = '172.20.209.232', 443 # Change to current IP Address
 
     # Run the HTTP server in the event loop
     loop = asyncio.get_event_loop()
