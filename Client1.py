@@ -12,7 +12,7 @@ def send_request_to_proxy(option, number, proxy_address, server_address):
 
 if __name__ == "__main__":
     # Prompt the user for inputs
-    proxy_address = input("Enter the address of client 2: ")
+    proxy_address = input("Enter the address of proxy: ")
     server_address = input("Enter the server address: ")
 
     while True:
