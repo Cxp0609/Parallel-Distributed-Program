@@ -42,7 +42,7 @@ async def start_server():
     runner = web.AppRunner(app)
     await runner.setup()
 
-    site = web.TCPSite(runner, '172.20.212.108', 8000)  # Listening on serer, port 8000
+    site = web.TCPSite(runner, '172.16.89.26', 8000)  # Listening on serer, port 8000
     await site.start()
     print("Proxy server started")
 
