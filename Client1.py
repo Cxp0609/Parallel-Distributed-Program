@@ -1,7 +1,7 @@
 import requests
 
-def send_request_to_client2(option, number, client2_address, server_address):
-    url = f"http://{client2_address}/process_request"
+def send_request_to_proxy(option, number, proxy_address, server_address):
+    url = f"http://{proxy_address}/process_request"
     data = {
         'option': option,
         'number': number,
@@ -12,7 +12,7 @@ def send_request_to_client2(option, number, client2_address, server_address):
 
 if __name__ == "__main__":
     # Prompt the user for inputs
-    client2_address = input("Enter the address of client 2: ")
+    proxy_address = input("Enter the address of client 2: ")
     server_address = input("Enter the server address: ")
 
     while True:
@@ -36,7 +36,7 @@ if __name__ == "__main__":
         number = int(input("Enter a number: "))
 
         # Send the request to Client 2
-        result = send_request_to_client2(choice, number, client2_address, server_address)
+        result = send_request_to_proxy(choice, number, proxy_address, server_address)
 
         # Print the result
         print("Result:", result)

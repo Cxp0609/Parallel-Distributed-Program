@@ -42,9 +42,9 @@ async def start_server():
     runner = web.AppRunner(app)
     await runner.setup()
 
-    site = web.TCPSite(runner, '172.20.212.108', 8000)  # Listening on all interfaces, port 8000
+    site = web.TCPSite(runner, '172.20.212.108', 8000)  # Listening on serer, port 8000
     await site.start()
-    print("Client 2 server started")
+    print("Proxy server started")
 
 # Start the web server
 loop = asyncio.get_event_loop()
